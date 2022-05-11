@@ -226,6 +226,7 @@ body {
 .active {
   order: 1;
   width: 40%;
+  text-align: right;
 }
 
 .active label {
@@ -257,13 +258,77 @@ body {
   border-color: var(--label-bg) !important;
 }
 
+.slider-titles-wrapper {
+  width: 22%;
+  overflow: hidden;
+  margin-right: auto;
+}
+
 .slider-titles {
-  width: 100%;
+  width: max-content;
   display: flex;
+  gap: 1em;
   overflow: hidden;
   transition: all 0.8s linear;
 }
 
 .slider-title {
   width: 100%;
+}
+
+#switch1:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: 0;
+  transition: all 0.8s linear;
+}
+#switch2:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -100%;
+  transition: all 0.8s linear;
+}
+#switch3:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -200%;
+  transition: all 0.8s linear;
+}
+#switch4:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -300%;
+  transition: all 0.8s linear;
+}
+#switch5:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -400%;
+  transition: all 0.8s linear;
+}
+#switch6:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -500%;
+  transition: all 0.8s linear;
+}
+#switch7:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -600%;
+  transition: all 0.8s linear;
+}
+#switch8:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -700%;
+  transition: all 0.8s linear;
 }
