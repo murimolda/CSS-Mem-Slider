@@ -209,35 +209,35 @@ body {
 
 #switch1:checked ~ .slider-items {
   margin-left: 0;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch2:checked ~ .slider-items {
   margin-left: -100%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch3:checked ~ .slider-items {
   margin-left: -200%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch4:checked ~ .slider-items {
   margin-left: -300%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch5:checked ~ .slider-items {
   margin-left: -400%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch6:checked ~ .slider-items {
   margin-left: -500%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch7:checked ~ .slider-items {
   margin-left: -600%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch8:checked ~ .slider-items {
   margin-left: -700%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 
 .slider-controls-wrapper {
@@ -254,7 +254,9 @@ body {
 .active {
   order: 1;
   width: 50%;
-  text-align: right;
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 768px) {
@@ -267,37 +269,83 @@ body {
   .active {
     order: 0;
     width: 100%;
-    text-align: center;
     margin-bottom: 30px;
+    justify-content: center;
+    gap: 0.5em;
+  }
+}
+@media screen and (max-width: 320px) {
+  .active {
+    gap: 0.3em;
   }
 }
 
 .active label {
-  border-radius: 10px;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  border: 2px solid var(--label-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   transition: all 0.5s ease-out;
-  padding: 5px;
 }
 
-.active label:hover {
+.active label:hover > .active-item {
   background: var(--main-color);
   border: 2px solid var(--main-color);
   transition: all 0.5s ease-out;
 }
 
-#switch1:checked ~ .slider-controls-wrapper > .active label:nth-child(1),
-#switch2:checked ~ .slider-controls-wrapper > .active label:nth-child(2),
-#switch3:checked ~ .slider-controls-wrapper > .active label:nth-child(3),
-#switch4:checked ~ .slider-controls-wrapper > .active label:nth-child(4),
-#switch5:checked ~ .slider-controls-wrapper > .active label:nth-child(5),
-#switch6:checked ~ .slider-controls-wrapper > .active label:nth-child(6),
-#switch7:checked ~ .slider-controls-wrapper > .active label:nth-child(7),
-#switch8:checked ~ .slider-controls-wrapper > .active label:nth-child(8) {
+.active-item {
+  display: block;
+  border-radius: 10px;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  border: 2px solid var(--label-bg);
+  transition: all 0.5s ease-out;
+}
+
+#switch1:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(1)
+  > .active-item,
+#switch2:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(2)
+  > .active-item,
+#switch3:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(3)
+  > .active-item,
+#switch4:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(4)
+  > .active-item,
+#switch5:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(5)
+  > .active-item,
+#switch6:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(6)
+  > .active-item,
+#switch7:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(7)
+  > .active-item,
+#switch8:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(8)
+  > .active-item {
   background: var(--label-bg);
   border-color: var(--label-bg) !important;
 }
@@ -311,6 +359,7 @@ body {
 @media screen and (max-width: 768px) {
   .slider-titles-wrapper {
     margin-left: 20px;
+    margin-bottom: 50px;
   }
 }
 
@@ -323,7 +372,7 @@ body {
 .slider-titles {
   width: max-content;
   display: flex;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 
 .slider-title {
@@ -343,54 +392,54 @@ body {
   > .slider-titles-wrapper
   > .slider-titles {
   margin-left: 0;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch2:checked
   ~ .slider-controls-wrapper
   > .slider-titles-wrapper
   > .slider-titles {
   margin-left: -100%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch3:checked
   ~ .slider-controls-wrapper
   > .slider-titles-wrapper
   > .slider-titles {
   margin-left: -200%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch4:checked
   ~ .slider-controls-wrapper
   > .slider-titles-wrapper
   > .slider-titles {
   margin-left: -300%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch5:checked
   ~ .slider-controls-wrapper
   > .slider-titles-wrapper
   > .slider-titles {
   margin-left: -400%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch6:checked
   ~ .slider-controls-wrapper
   > .slider-titles-wrapper
   > .slider-titles {
   margin-left: -500%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch7:checked
   ~ .slider-controls-wrapper
   > .slider-titles-wrapper
   > .slider-titles {
   margin-left: -600%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
 #switch8:checked
   ~ .slider-controls-wrapper
   > .slider-titles-wrapper
   > .slider-titles {
   margin-left: -700%;
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
 }
