@@ -117,6 +117,7 @@ ul li {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover,
@@ -161,12 +162,18 @@ body {
   margin-top: 10px;
 }
 
+@media screen and (max-width: 540px) {
+  .slider-wrapper {
+    width: 100%;
+    margin-top: -20px;
+  }
+}
+
 .slider {
   overflow: hidden;
 }
 
 .slider-items {
-  width: 100%;
   border-radius: 10px;
   display: flex;
   width: max-content;
@@ -175,9 +182,34 @@ body {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .slider-items {
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .slider-items {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .slider-item {
+    width: 100vw;
+    height: auto;
+  }
+}
+
 .slider-items img {
   border-radius: 10px;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-items img {
+    border-radius: 0;
+  }
 }
 
 .slider input {
@@ -223,21 +255,43 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 540px) {
+  .slider-controls-wrapper {
+    flex-direction: column;
+  }
+}
+
 .active {
   order: 1;
-  width: 40%;
+  width: 50%;
   text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .active {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .active {
+    order: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }
 
 .active label {
   border-radius: 10px;
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   background: transparent;
   border: 2px solid var(--label-bg);
   cursor: pointer;
   transition: all 0.5s ease-out;
+  padding: 5px;
 }
 
 .active label:hover {
@@ -259,21 +313,44 @@ body {
 }
 
 .slider-titles-wrapper {
-  width: 22%;
+  width: 25%;
   overflow: hidden;
   margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-titles-wrapper {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .slider-titles-wrapper {
+    width: 100%;
+  }
 }
 
 .slider-titles {
   width: max-content;
   display: flex;
-  gap: 1em;
-  overflow: hidden;
   transition: all 0.8s linear;
+}
+
+@media screen and (max-width: 540px) {
+  .slider-titles {
+    width: 100%;
+  }
 }
 
 .slider-title {
   width: 100%;
+  margin-right: 35px;
+}
+
+@media screen and (max-width: 540px) {
+  .slider-title {
+    width: 100%;
+  }
 }
 
 #switch1:checked
