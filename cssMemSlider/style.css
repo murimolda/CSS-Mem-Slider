@@ -1,30 +1,20 @@
 @charset "UTF-8";
 
-/*Georgia*/
+/*Roboto Mono*/
 
 @font-face {
-  font-family: "Georgia";
-  src: url("assets/fonts/Georgia/Georgia-Bold.eot");
-  src: local("Georgia Bold"), local("Georgia-Bold"),
-    url("assets/fonts/Georgia/Georgia-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("assets/fonts/Georgia/Georgia-Bold.woff") format("woff"),
-    url("assets/fonts/Georgia/Georgia-Bold.ttf") format("truetype");
-  font-weight: bold;
+  font-family: "Roboto Mono";
+  src: url("assets/fonts/Roboto_Mono/RobotoMono-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Georgia";
-  src: url("assets/fonts/Georgia/Georgia.eot");
-  src: local("Georgia"),
-    url("assets/fonts/Georgia/Georgia.eot?#iefix") format("embedded-opentype"),
-    url("assets/fonts/Georgia/Georgia.woff") format("woff"),
-    url("assets/fonts/Georgia/Georgia.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "Roboto Mono";
+  src: url("assets/fonts/Roboto_Mono/RobotoMono-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
 }
-
 /* Свойство для контроля переполнения потока. 
 Включать для нахождения элементов, которые выходят за ширину страницы 
 если появляется горизонтальная прокрутка на странице
@@ -139,7 +129,7 @@ p {
   --main-color: #ffffff;
 
   --main-font-size: 20px;
-  --font-family: "Georgia", serif;
+  --font-family: "Roboto Mono", monospace;
 }
 
 /*Base style*/
@@ -165,7 +155,7 @@ body {
 @media screen and (max-width: 540px) {
   .slider-wrapper {
     width: 100%;
-    margin-top: -20px;
+    margin-top: 50px;
   }
 }
 
@@ -336,20 +326,15 @@ body {
   transition: all 0.8s linear;
 }
 
-@media screen and (max-width: 540px) {
-  .slider-titles {
-    width: 100%;
-  }
-}
-
 .slider-title {
   width: 100%;
-  margin-right: 35px;
+  margin-right: calc(135px - 100%);
 }
 
 @media screen and (max-width: 540px) {
   .slider-title {
-    width: 100%;
+    width: 100vw;
+    margin-right: 0;
   }
 }
 
