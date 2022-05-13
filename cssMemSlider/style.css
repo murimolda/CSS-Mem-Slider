@@ -322,7 +322,51 @@ body {
   label:nth-child(8)
   > .active-item {
   background: var(--label-bg);
-  border-color: var(--label-bg) !important;
+  border-color: var(--label-bg);
+}
+
+#switch1:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(1):hover
+  > .active-item,
+#switch2:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(2):hover
+  > .active-item,
+#switch3:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(3):hover
+  > .active-item,
+#switch4:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(4):hover
+  > .active-item,
+#switch5:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(5):hover
+  > .active-item,
+#switch6:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(6):hover
+  > .active-item,
+#switch7:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(7):hover
+  > .active-item,
+#switch8:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(8):hover
+  > .active-item {
+  background: var(--label-bg);
+  border: 2px solid var(--main-color);
 }
 
 .slider-titles-wrapper {
