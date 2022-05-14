@@ -125,6 +125,8 @@ p {
 :root {
   --main-bg: #131313;
   --label-bg: #18a3dd;
+  --active-label-bg: rgb(225, 225, 225, 0.8);
+  --active-label-border: rgba(225, 225, 225, 0.8);
 
   --main-color: #ffffff;
 
@@ -329,6 +331,52 @@ body {
   > .active-item {
   background: var(--label-bg);
   border-color: var(--label-bg);
+  transition: all 0.5s ease-out;
+}
+#switch1:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(1)
+  > .active-item,
+#switch2:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(2)
+  > .active-item,
+#switch3:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(3)
+  > .active-item,
+#switch4:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(4)
+  > .active-item,
+#switch5:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(5)
+  > .active-item,
+#switch6:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(6)
+  > .active-item,
+#switch7:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(7)
+  > .active-item,
+#switch8:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(8)
+  > .active-item {
+  background: var(--active-label-bg);
+  border: 0.1em solid var(--active-label-border);
+  box-shadow: 0 0 0.8em 0 rgba(225, 225, 225);
+  transition: all 0.8s ease-out;
 }
 
 #switch1:checked
@@ -373,6 +421,53 @@ body {
   > .active-item {
   background: var(--label-bg);
   border: 0.1em solid var(--main-color);
+  transition: all 0.5s ease-out;
+}
+
+#switch1:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(1)
+  > .active-item,
+#switch2:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(2)
+  > .active-item,
+#switch3:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(3)
+  > .active-item,
+#switch4:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(4)
+  > .active-item,
+#switch5:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(5)
+  > .active-item,
+#switch6:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(6)
+  > .active-item,
+#switch7:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(7)
+  > .active-item,
+#switch8:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(8)
+  > .active-item {
+  background: var(--active-label-bg);
+  border: 0.1em solid var(--active-label-border);
+  box-shadow: 0 0 0.8em 0 rgba(225, 225, 225);
+  transition: all 0.8s ease-out;
 }
 
 .slider-titles-wrapper {
