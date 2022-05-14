@@ -1,0 +1,564 @@
+@charset "UTF-8";
+
+/*Roboto Mono*/
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("assets/fonts/Roboto_Mono/RobotoMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("assets/fonts/Roboto_Mono/RobotoMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+/* Свойство для контроля переполнения потока. 
+Включать для нахождения элементов, которые выходят за ширину страницы 
+если появляется горизонтальная прокрутка на странице
+*/
+
+/* * {
+    outline: solid 0.05em red;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
+
+a:focus,
+*:active {
+  outline: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  padding: 0;
+}
+
+input:-internal-autofill-selected {
+  background-color: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul li {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/*Variables*/
+
+:root {
+  --main-bg: #131313;
+  --label-bg: #18a3dd;
+  --active-label-bg: rgb(225, 225, 225, 0.8);
+  --active-label-border: rgba(225, 225, 225, 0.8);
+
+  --main-color: #ffffff;
+
+  --main-font-size: 1.25em;
+  --font-family: "Roboto Mono", monospace;
+}
+
+/*Base style*/
+
+body {
+  background: var(--main-bg);
+  color: var(--main-color);
+  font-size: var(--main-font-size);
+  font-family: var(--font-family);
+}
+
+.container {
+  width: calc(100% - 2em);
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.slider-wrapper {
+  width: 27em;
+  margin: 0 auto;
+  margin-top: 0.5em;
+}
+
+@media screen and (max-width: 620px) {
+  .slider-wrapper {
+    width: 100%;
+  }
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slider-items {
+  display: flex;
+  width: max-content;
+  border-radius: 0.5em;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 620px) {
+  .slider-items {
+    margin-bottom: 1.5em;
+  }
+}
+
+.slider-item {
+  width: 27em;
+  height: auto;
+  height: auto;
+}
+
+@media screen and (max-width: 620px) {
+  .slider-item {
+    width: calc(100vw - 4em);
+    height: auto;
+  }
+}
+
+.slider-items img {
+  border-radius: 0.5em;
+  width: 100%;
+  height: 100%;
+}
+
+.slider input {
+  width: 0;
+  height: 0;
+}
+
+#switch1:checked ~ .slider-items {
+  margin-left: 0;
+  transition: all 0.6s linear;
+}
+#switch2:checked ~ .slider-items {
+  margin-left: -100%;
+  transition: all 0.6s linear;
+}
+#switch3:checked ~ .slider-items {
+  margin-left: -200%;
+  transition: all 0.6s linear;
+}
+#switch4:checked ~ .slider-items {
+  margin-left: -300%;
+  transition: all 0.6s linear;
+}
+#switch5:checked ~ .slider-items {
+  margin-left: -400%;
+  transition: all 0.6s linear;
+}
+#switch6:checked ~ .slider-items {
+  margin-left: -500%;
+  transition: all 0.6s linear;
+}
+#switch7:checked ~ .slider-items {
+  margin-left: -600%;
+  transition: all 0.6s linear;
+}
+#switch8:checked ~ .slider-items {
+  margin-left: -700%;
+  transition: all 0.6s linear;
+}
+
+.slider-controls-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 620px) {
+  .slider-controls-wrapper {
+    flex-direction: column;
+  }
+}
+
+.active {
+  order: 1;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 620px) {
+  .active {
+    order: 0;
+    width: 100%;
+    margin-bottom: 1.5em;
+    justify-content: center;
+  }
+}
+
+.active label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.active label:hover > .active-item {
+  background: var(--main-color);
+  border: 0.1em solid var(--main-color);
+  transition: all 0.5s ease-out;
+}
+
+.active-item {
+  display: block;
+  border-radius: 0.5em;
+  width: 0.75em;
+  height: 0.75em;
+  background: transparent;
+  border: 0.1em solid var(--label-bg);
+  transition: all 0.5s ease-out;
+}
+
+#switch1:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(1)
+  > .active-item,
+#switch2:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(2)
+  > .active-item,
+#switch3:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(3)
+  > .active-item,
+#switch4:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(4)
+  > .active-item,
+#switch5:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(5)
+  > .active-item,
+#switch6:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(6)
+  > .active-item,
+#switch7:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(7)
+  > .active-item,
+#switch8:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(8)
+  > .active-item {
+  background: var(--label-bg);
+  border-color: var(--label-bg);
+  transition: all 0.5s ease-out;
+}
+#switch1:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(1)
+  > .active-item,
+#switch2:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(2)
+  > .active-item,
+#switch3:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(3)
+  > .active-item,
+#switch4:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(4)
+  > .active-item,
+#switch5:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(5)
+  > .active-item,
+#switch6:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(6)
+  > .active-item,
+#switch7:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(7)
+  > .active-item,
+#switch8:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(8)
+  > .active-item {
+  background: var(--active-label-bg);
+  border: 0.1em solid var(--active-label-border);
+  box-shadow: 0 0 0.8em 0 rgba(225, 225, 225);
+  transition: all 0.8s ease-out;
+}
+
+#switch1:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(1):hover
+  > .active-item,
+#switch2:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(2):hover
+  > .active-item,
+#switch3:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(3):hover
+  > .active-item,
+#switch4:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(4):hover
+  > .active-item,
+#switch5:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(5):hover
+  > .active-item,
+#switch6:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(6):hover
+  > .active-item,
+#switch7:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(7):hover
+  > .active-item,
+#switch8:checked
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(8):hover
+  > .active-item {
+  background: var(--label-bg);
+  border: 0.1em solid var(--main-color);
+  transition: all 0.5s ease-out;
+}
+
+#switch1:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(1)
+  > .active-item,
+#switch2:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(2)
+  > .active-item,
+#switch3:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(3)
+  > .active-item,
+#switch4:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(4)
+  > .active-item,
+#switch5:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(5)
+  > .active-item,
+#switch6:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(6)
+  > .active-item,
+#switch7:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(7)
+  > .active-item,
+#switch8:active
+  ~ .slider-controls-wrapper
+  > .active
+  label:nth-child(8)
+  > .active-item {
+  background: var(--active-label-bg);
+  border: 0.1em solid var(--active-label-border);
+  box-shadow: 0 0 0.8em 0 rgba(225, 225, 225);
+  transition: all 0.8s ease-out;
+}
+
+.slider-titles-wrapper {
+  width: 25%;
+  overflow: hidden;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-titles-wrapper {
+    margin-bottom: 1.5em;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .slider-titles-wrapper {
+    width: 100%;
+  }
+}
+
+.slider-titles {
+  width: max-content;
+  display: flex;
+  transition: all 0.6s linear;
+}
+
+.slider-title {
+  width: 100%;
+  margin-right: calc(6.75em - 100%);
+}
+
+@media screen and (max-width: 620px) {
+  .slider-title {
+    width: calc(100vw - 4em);
+    margin-right: 0;
+  }
+}
+
+#switch1:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: 0;
+  transition: all 0.6s linear;
+}
+#switch2:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -100%;
+  transition: all 0.6s linear;
+}
+#switch3:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -200%;
+  transition: all 0.6s linear;
+}
+#switch4:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -300%;
+  transition: all 0.6s linear;
+}
+#switch5:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -400%;
+  transition: all 0.6s linear;
+}
+#switch6:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -500%;
+  transition: all 0.6s linear;
+}
+#switch7:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -600%;
+  transition: all 0.6s linear;
+}
+#switch8:checked
+  ~ .slider-controls-wrapper
+  > .slider-titles-wrapper
+  > .slider-titles {
+  margin-left: -700%;
+  transition: all 0.6s linear;
+}
